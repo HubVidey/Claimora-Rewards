@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claimora Rewards - Official Gift Cards & Rewards</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      /* Background mpya ya kijivu hafifu cha kimataifa (soft light slate/grey) */
+      background-color: #e2e8f0;
+      color: #0f172a;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .claimora-wrapper {
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+      padding: 15px 12px 25px 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Header Section */
+    .brand-header {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      padding: 22px 16px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .brand-header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    .brand-header p {
+      font-size: 13px;
+      line-height: 1.4;
+      opacity: 0.95;
+    }
+
+    /* ENEO LA BOKSI NA VITU VITATU VYA USHINDI */
+    .promo-banner {
+      text-align: center;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gift-box-link {
+      display: flex;
+      text-decoration: none !important;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .gift-box-area {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      border-radius: 22px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 10px;
+      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+      overflow: hidden;
+      border: 3px solid #ffffff;
+      cursor: pointer;
+    }
+
+    /* Maua/Confetti za Nyuma */
+    .local-petal {
+      position: absolute;
+      width: 12px;
+      height: 16px;
+      opacity: 0.95;
+      border-radius: 4px;
+      animation: petal-fall linear infinite;
+    }
+    @keyframes petal-fall {
+      0% { top: -20px; transform: translateX(0) rotate(0deg); }
+      100% { top: 210px; transform: translateX(40px) rotate(360deg); }
+    }
+
+    .lp1 { left: 8%; background: #ff2a75; animation-duration: 1.7s; }
+    .lp2 { left: 25%; background: #ffd700; animation-duration: 2.2s; animation-delay: 0.3s; width: 14px; height: 14px; }
+    .lp3 { left: 45%; background: #00e5ff; animation-duration: 1.9s; animation-delay: 0.1s; }
+    .lp4 { left: 70%; background: #22c55e; animation-duration: 2.4s; animation-delay: 0.5s; }
+    .lp5 { left: 88%; background: #ff9900; animation-duration: 1.8s; animation-delay: 0.2s; width: 13px; height: 13px; }
+
+    /* Vitu Vitatu vya Ushindi */
+    .item-box {
+      font-size: 58px;
+      z-index: 5;
+      animation: bounce-box 2s infinite ease-in-out;
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3));
+    }
+    @keyframes bounce-box {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.08); }
+    }
+
+    .item-cash {
+      font-size: 50px;
+      z-index: 5;
+      animation: bounce-cash 1.8s infinite ease-in-out alternate;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.3));
+    }
+    @keyframes bounce-cash {
+      0% { transform: translateY(-5px) rotate(-8deg) scale(0.95); }
+      100% { transform: translateY(8px) rotate(8deg) scale(1.1); }
+    }
+
+    .item-trophy {
+      font-size: 52px;
+      z-index: 5;
+      animation: bounce-trophy 2.2s infinite ease-in-out;
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3));
+    }
+    @keyframes bounce-trophy {
+      0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+      30% { transform: translateY(-10px) scale(1.12) rotate(-5deg); }
+      60% { transform: translateY(5px) scale(0.95) rotate(5deg); }
+    }
+
+    /* WELCOME BANNER */
+    .cta-welcome-banner {
+      margin-top: 14px;
+      background: #ffffff;
+      padding: 14px 16px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      border: 2px dashed #0284c7;
+      text-align: center;
+      width: 95%;
+    }
+
+    .cta-welcome-banner h2 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .cta-welcome-banner h2 span {
+      color: #0284c7;
+    }
+
+    /* Orodha ya Kadi za Zawadi */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 20px;
+      margin-top: 14px;
+    }
+    .gift-card-item {
+      display: block;
+      text-decoration: none !important;
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      transition: all 0.25s ease;
+      width: 95%;
+      margin: 0 auto;
+    }
+    .gift-card-item:hover, .gift-card-item:active {
+      border-color: #ff5722;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 87, 34, 0.18);
+    }
+
+    /* Nembo Halisi na Kichwa cha Kadi */
+    .card-title-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .brand-svg-icon {
+      width: 28px;
+      height: 28px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .card-amount {
+      font-size: 22px;
+      font-weight: 800;
+      color: #16a34a;
+      margin-bottom: 12px;
+    }
+
+    /* Action Button */
+    .action-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 14px 0;
+      background: linear-gradient(90deg, #ff5722, #f97316);
+      color: #ffffff !important;
+      font-weight: 800;
+      font-size: 15px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(255, 87, 34, 0.35);
+      animation: pulse-glow 1.8s infinite;
+    }
+    @keyframes pulse-glow {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7); }
+      70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+    }
+
+    .finger-pointer {
+      display: inline-block;
+      font-size: 18px;
+      animation: bounce-finger 1s infinite alternate;
+    }
+    @keyframes bounce-finger {
+      0% { transform: translateX(-3px); }
+      100% { transform: translateX(3px); }
+    }
+
+    /* Easy Steps */
+    .instructions-card {
+      width: 95%;
+      margin: 0 auto;
+      background: #ffffff;
+      border-left: 5px solid #0284c7;
+      padding: 16px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+    .instructions-card h3 {
+      font-size: 14px;
+      color: #0284c7;
+      margin-bottom: 8px;
+    }
+    .instructions-card ol {
+      padding-left: 18px;
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      color: #475569;
+      font-style: italic;
+      padding: 12px 10px 0 10px;
+    }
+
+    /* REAL CROWD FOOTER */
+    .real-crowd-footer {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      height: 220px;
+      position: relative;
+      background-image: url('Claimora-Rewards.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 15px;
+      margin-top: 0;
+      border-top: 3px solid #0284c7;
+    }
+
+    .footer-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 12px;
+      z-index: 1;
+    }
+
+    .copyright-text {
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="claimora-wrapper">
+
+  <!-- Header Section -->
+  <div class="brand-header">
+    <h1>🎁 Claimora Rewards</h1>
+    <p>Discover gift card information, rewards programs, special offers, and giveaway opportunities. Explore promotion details and claim your rewards easily.</p>
+  </div>
+
+  <!-- Eneo la Vitu Vitatu vya Ushindi (Linked to Monetag) -->
+  <div class="promo-banner">
+    <a href="https://uplcm.com/4/12054716" target="_blank" class="gift-box-link">
+      <div class="gift-box-area">
+        <!-- Maua ya Nyuma -->
+        <div class="local-petal lp1"></div>
+        <div class="local-petal lp2"></div>
+        <div class="local-petal lp3"></div>
+        <div class="local-petal lp4"></div>
+        <div class="local-petal lp5"></div>
+
+        <!-- 1. Gift Box -->
+        <div class="item-box">🎁</div>
+
+        <!-- 2. Cash / Pesa -->
+        <div class="item-cash">💵</div>
+
+        <!-- 3. Trophy & Win -->
+        <div class="item-trophy">🏆</div>
+      </div>
+    </a>
+    
+    <div class="cta-welcome-banner">
+      <h2>🎉 Welcome & Enjoy! Play <span>Claimora Rewards</span> — Choose Your Reward Below to Play & Win! 👇</h2>
+    </div>
+  </div>
+
+  <!-- Vertical Cards List -->
+  <div class="card-list">
+
+    <!-- Amazon Card -->
+    <a href="https://uplcm.com/4/12054716" target="_blank" class="gift-card-item">
+      <div class="card-title-box">
+        <svg class="brand-svg-icon" viewBox="0 0 24 24" fill="#ff9900">
+          <path d="M13.84 12.67c-1.84.22-2.87.89-2.87 2.15 0 1.17.84 1.88 2.1 1.88 1.25 0 2.22-.68 2.52-1.78v-1.63c-.52-.3-1.07-.52-1.75-.62zm5.13 5.38c-.28.23-.62.33-.94.33-.37 0-.74-.15-.99-.44-.3-.35-.38-.85-.38-1.32v-3.14c0-1.76-.89-2.73-2.61-2.73-1.37 0-2.48.56-2.97 1.25l1.04 1.15c.34-.43.98-.82 1.63-.82.78 0 1.2.39 1.2 1.12v.37c-.63.08-1.42.18-2.22.33-1.87.35-3.12 1.28-3.12 2.87 0 1.79 1.34 2.85 3.03 2.85 1.48 0 2.45-.63 2.92-1.57.18.52.55.97 1.11 1.27.48.26 1.05.35 1.59.26l.51-1.02c-.31.04-.63.01-.89-.13zm-2.07-8.98C12.31 6.38 6.53 7.82 2.5 11.2l.85 1.05c3.67-3.1 9.01-4.42 13.27-1.87l.28-1.31zm.99.78c.08.31.02.63-.16.88l-1.09.84c-.2.15-.47.19-.71.1-.24-.09-.42-.29-.48-.54l-.27-1.22c-.08-.34.05-.69.31-.9.27-.21.63-.25.94-.1l1.19.46c.18.07.31.22.36.41z"/>
+        </svg>
+        <span class="card-title">Amazon eGift Card</span>
+      </div>
+      <div class="card-amount">$100.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
+    </a>
+
+    <!-- PayPal Card -->
+    <a href="https://uplcm.com/4/12054716" target="_blank" class="gift-card-item">
+      <div class="card-title-box">
+        <svg class="brand-svg-icon" viewBox="0 0 24 24" fill="#003087">
+          <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .761-.648h6.818c2.81 0 4.882.682 5.566 2.016.592 1.155.438 2.872-.416 4.606-.882 1.79-2.38 3.014-4.238 3.014H10.15a.77.77 0 0 0-.76.648l-1.353 8.358a.641.641 0 0 1-.96.623z"/>
+        </svg>
+        <span class="card-title">PayPal Cash Voucher</span>
+      </div>
+      <div class="card-amount">$100.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
+    </a>
+
+    <!-- Walmart Card -->
+    <a href="https://uplcm.com/4/12054716" target="_blank" class="gift-card-item">
+      <div class="card-title-box">
+        <svg class="brand-svg-icon" viewBox="0 0 24 24" fill="#ffc220">
+          <path d="M12 2a1.5 1.5 0 0 1 1.5 1.5v4a1.5 1.5 0 0 1-3 0v-4A1.5 1.5 0 0 1 12 2zm0 13a1.5 1.5 0 0 1 1.5 1.5v4a1.5 1.5 0 0 1-3 0v-4A1.5 1.5 0 0 1 12 15zm7.07-10.07a1.5 1.5 0 0 1 0 2.12l-2.83 2.83a1.5 1.5 0 0 1-2.12-2.12l2.83-2.83a1.5 1.5 0 0 1 2.12 0zm-11.31 11.31a1.5 1.5 0 0 1 0 2.12l-2.83 2.83a1.5 1.5 0 0 1-2.12-2.12l2.83-2.83a1.5 1.5 0 0 1 2.12 0zM22 12a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1 0-3h4A1.5 1.5 0 0 1 22 12zM9 12a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1 0-3h4A1.5 1.5 0 0 1 9 12zm10.07 7.07a1.5 1.5 0 0 1-2.12 0l-2.83-2.83a1.5 1.5 0 0 1 2.12-2.12l2.83 2.83a1.5 1.5 0 0 1 0 2.12zM7.76 7.76a1.5 1.5 0 0 1-2.12 0L2.81 4.93a1.5 1.5 0 0 1 2.12-2.12l2.83 2.83a1.5 1.5 0 0 1 0 2.12z"/>
+        </svg>
+        <span class="card-title">Walmart eGift Card</span>
+      </div>
+      <div class="card-amount">$100.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
+    </a>
+
+    <!-- Apple Card -->
+    <a href="https://uplcm.com/4/12054716" target="_blank" class="gift-card-item">
+      <div class="card-title-box">
+        <svg class="brand-svg-icon" viewBox="0 0 24 24" fill="#000000">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.13-1.97.99-3.12-1 .04-2.22.67-2.91 1.48-.61.72-1.15 1.89-.99 3.01 1.12.09 2.24-.55 2.91-1.37z"/>
+        </svg>
+        <span class="card-title">Apple App Store Card</span>
+      </div>
+      <div class="card-amount">$50.00 REWARD</div>
+      <div class="action-button">
+        <span class="finger-pointer">👉</span> CLICK HERE TO CLAIM <span class="finger-pointer">👈</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Easy Steps -->
+  <div class="instructions-card">
+    <h3>⚡ Easy Steps to Get Started:</h3>
+    <ol>
+      <li>Tap any <strong>"CLICK HERE TO CLAIM"</strong> button above.</li>
+      <li>Complete a quick sponsor verification process (1-2 minutes).</li>
+      <li>Receive and redeem your digital code instantly!</li>
+    </ol>
+  </div>
+
+  <div class="footer-note">
+    Sponsored promotional offers provided by verified network partners.
+  </div>
+
+</div>
+
+<!-- REAL CROWD FOOTER -->
+<div class="real-crowd-footer">
+  <div class="footer-overlay">
+    <div class="copyright-text">© 2026 Claimora Rewards. All rights reserved.</div>
+  </div>
+</div>
+
+</body>
+</html>
